@@ -1,0 +1,163 @@
+{
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "id": "http://jsonschema.net",
+    "required": false,
+    "globals": {
+        "_navOrder": {
+            "type": "number",
+            "required": true,
+            "title": "Navigation bar order",
+            "help": "Determines the order in which the button is displayed in the navigation bar. Negative numbers (e.g. -100) are left-aligned. Positive numbers (e.g. 100) are right-aligned.",
+            "default": 99,
+            "inputType": "Text"
+        },
+        "_showLabel": {
+            "type": "boolean",
+            "required": true,
+            "default": true,
+            "title": "Enable navigation bar button label",
+            "inputType": "Checkbox",
+            "help": "Controls whether a label is shown on the navigation bar button."
+        },
+        "navLabel": {
+            "type": "string",
+            "required": true,
+            "default": "Widget",
+            "title": "Navigation bar button label",
+            "inputType": "Text",
+            "translatable": true
+        },
+        "_navTooltip": {
+            "type": "object",
+            "title": "Navigation tooltip",
+            "properties": {
+                "_isEnabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "title": "Enable tooltip for navigation button",
+                    "inputType": "Checkbox",
+                    "validators": []
+                },
+                "text": {
+                    "type": "string",
+                    "title": "Text",
+                    "default": "Widget",
+                    "help": "The tooltip text to display on hover over this item",
+                    "inputType": "Text",
+                    "validators": [],
+                    "translatable": true
+                }
+            }
+        },
+        "_drawerPosition": {
+            "type": "string",
+            "required": true,
+            "default": "auto",
+            "title": "Drawer position",
+            "help": "Determines the starting position of the drawer to open.",
+            "inputType": {
+                "type": "Select",
+                "options": [
+                    "auto",
+                    "left",
+                    "right"
+                ]
+            },
+            "validators": []
+        }
+    },
+    "properties": {
+        "pluginLocations": {
+            "type": "object",
+            "required": true,
+            "properties": {
+                "config": {
+                    "type": "object"
+                },
+                "course": {
+                    "type": "object",
+                    "properties": {
+                        "_widgetframe": {
+                            "type": "object",
+                            "required": false,
+                            "legend": "Widgetframe",
+                            "properties": {
+                                "_isEnabled": {
+                                    "type": "boolean",
+                                    "required": true,
+                                    "default": true,
+                                    "title": "Enable Widgetframe",
+                                    "inputType": "Checkbox",
+                                    "validators": [],
+                                    "help": "Controls whether the reaction extension is enabled or disabled."
+                                },
+                                "_renderMode": {
+                                    "type": "string",
+                                    "required": true,
+                                    "enum": [
+                                        "drawer",
+                                        "notify"
+                                    ],
+                                    "default": "drawer",
+                                    "title": "Render mode",
+                                    "inputType": {
+                                        "type": "Select",
+                                        "options": [
+                                            "drawer",
+                                            "notify"
+                                        ]
+                                    },
+                                    "validators": [
+                                        "required"
+                                    ],
+                                    "help": "The mode in which the widgetframe is rendered"
+                                },
+                                "_iframe": {
+                                    "type": "object",
+                                    "required": true,
+                                    "properties": {
+                                        "src": {
+                                            "type": "string",
+                                            "required": true,
+                                            "default": "",
+                                            "title": "URL",
+                                            "inputType": "Text",
+                                            "validators": [
+                                                "required"
+                                            ],
+                                            "help": "The URL of the widget to be displayed in the iframe."
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "required": true,
+                                            "default": "",
+                                            "title": "Title",
+                                            "inputType": "Text",
+                                            "validators": [
+                                                "required"
+                                            ],
+                                            "help": "The title of the iframe."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "contentobject": {
+                    "type": "object"
+                },
+                "article": {
+                    "type": "object"
+                },
+                "block": {
+                    "type": "object"
+                },
+                "component": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

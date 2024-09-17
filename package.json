@@ -1,0 +1,18 @@
+{
+  "name": "adapt-widgetframe",
+  "version": "1.0.0",
+  "framework": ">=5.31.11",
+  "homepage": "",
+  "bugs": "",
+  "extension": "widgetframe",
+  "displayName": "Widgetframe",
+  "description": "An extension that allows you to embed external content within an Adapt course.",
+  "main": "/js/adapt-widgetframe.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPL-3.0",
+  "targetAttribute": "_widgetframe",
+  "private": true
+}
