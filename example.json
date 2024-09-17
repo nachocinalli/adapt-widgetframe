@@ -1,4 +1,9 @@
     // course.json
-"_widgetframe": {
-    "_isEnabled": true
-  }
+    "_widgetframe": {
+        "_isEnabled": true,
+        "_renderMode": "drawer",
+        "_iframe": {
+            "src": "https://adaptlearning.chatbot.com",
+            "title": "Adapt Chatbot"
+        }
+    }
