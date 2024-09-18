@@ -24,6 +24,7 @@ class Widgetframe extends Backbone.Controller {
 
   setupEventListeners() {
     this.listenTo(Adapt, {
+      remove: this.remove,
       'router:contentObject': this.onContentObject
     });
   }
@@ -31,7 +32,7 @@ class Widgetframe extends Backbone.Controller {
   onContentObject(pageModel) {
     const contentObjectModel = pageModel.get('_widgetframe');
     if (contentObjectModel?._isEnabled === false) return;
-
+    if ($('.nav__navigationwidgetframe').length) return;
     const { _navOrder = 100, _showLabel = true, navLabel = '', _navTooltip = {}, _drawerPosition = 'auto' } = Widgetframe.globalsConfig ?? {};
     const model = new NavigationButtonModel({
       _id: 'navigationwidgetframe',
@@ -51,6 +52,10 @@ class Widgetframe extends Backbone.Controller {
         model
       })
     );
+  }
+
+  remove() {
+    $('.nav__navigationwidgetframe').remove();
   }
 }
 
